@@ -11,7 +11,7 @@
 	url = https://github.com/pibook/_gallery
 [submodule "images"]
 	path = images
-	url = https://github.com/pibook/images
+	url = https://github.com/pibook/images.git
 [submodule "text"]
 	path = text
 	url = https://github.com/mibook/text.git
@@ -19,3 +19,9 @@
 [submodule "bibliography"]
 	path = bibliography
 	url = https://github.com/pibook/bibliography.git
+[submodule "_gallery"]
+	path = _gallery
+	url = https://github.com/pibook/_gallery.git
+[submodule "_quotes"]
+	path = _quotes
+	url = https://github.com/pibook/_quotes.git
