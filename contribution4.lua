@@ -1,13 +1,13 @@
 function Image(img)
     if img.classes:find('contribution4',1) then
-      local f = io.open("contribution4/" .. img.src, 'r')
+      local f = io.open("book/" .. img.src, 'r')
       local doc = pandoc.read(f:read('*a'))
       f:close()
-      local contribution = pandoc.utils.stringify(doc.meta.contribution) or "Epigraph has not been set"
-      local student = pandoc.utils.stringify(doc.meta.student) or "Student has not been set"
-      local id = pandoc.utils.stringify(doc.meta.id) or "Student ID has not been set"
-      local credentials = " Student: " .. student .. " (" .. id .. ")"
-      local text = "\n\n _" .. contribution4 .. "_ \n\n"
-      return pandoc.RawInline('markdown',text .. credentials)
+      local caption = pandoc.utils.stringify(doc.meta.caption) 
+      local author = pandoc.utils.stringify(doc.meta.author)
+      local id = pandoc.utils.stringify(doc.meta.id) 
+      
+      local content = ">  _" .. caption .. "_ /n>" .. "Ονοματεπωνυμο Φοιτητη:" .. author .. "Αριθμος Μητρωου:" .. id
+      return pandoc.RawInline('markdown',content)
     end
 end
